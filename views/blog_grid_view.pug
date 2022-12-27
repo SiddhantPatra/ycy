@@ -1,0 +1,148 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='img/favicon.ico' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='assets/animation/animate.css')
+    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    title YCY
+.body_wrapper
+    incude _header
+    section.breadcrumb_area
+        img.p_absolute.bl_left(src='img/v.svg' alt='')
+        img.p_absolute.bl_right(src='img/home_one/b_leaf.svg' alt='')
+        img.p_absolute.star(src='img/home_one/banner_bg.png' alt='')
+        img.p_absolute.wave_shap_one(src='img/blog-classic/shap_01.png' alt='')
+        img.p_absolute.wave_shap_two(src='img/blog-classic/shap_02.png' alt='')
+        img.p_absolute.one.wow.fadeInRight(src='img/home_one/b_man_two.png' alt='')
+        img.p_absolute.two.wow.fadeInUp(data-wow-delay='0.2s' src='img/home_one/flower.png' alt='')
+        .container
+            //
+                <form action="#" class="banner_search_form">
+                <input type="search" class="form-control" placeholder='Search ("/" to focus)'>
+                <button type="submit"><i class="icon_search"></i></button>
+                </form>
+    section.page_breadcrumb
+        .container
+            .row
+                .col-sm-7
+                    nav(aria-label='breadcrumb')
+                        ol.breadcrumb
+                            li.breadcrumb-item
+                                a(href='index.html') Home
+                            li.breadcrumb-item
+                                a(href='blog-single.html') Blog
+                            li.breadcrumb-item.active(aria-current='page') Blog Grid
+                            li.breadcrumb-item
+                                a(href='blog_category.html') Blog_category
+                .col-sm-5
+                    a.date(href='#')
+                        i.icon_clock_alt
+                        | Updated on March 03, 2020
+    section.blog_top_post_area.sec_pad.bg_color
+        .container
+            .row.blog_top_post.flex-row-reverse
+                .col-lg-7.p_top_img
+                    img.p_img(src='img/OnLine-Education-elearning-kids.jpg' alt='')
+                .col-lg-5.p-0
+                    .b_top_post_content
+                        .post_tag
+                            a(href='#') 9 Min Read
+                            a.c_blue(href='#') WordPress
+                        a(href='#')
+                            h3 10 WordPress Security Issues And How to Fix Them
+                        p
+                            | Tinkety tonk old fruit bodge on your bike mate car boot my good sir jolly good such a fibber up the kyver golly gosh David, naff chap.!
+                        a.learn_btn(href='#')
+                            | Continue Reading
+                            i.arrow_right
+                        .media.post_author
+                            .round_img
+                                img(src='img/blog-grid/ansley.jpg' alt='')
+                            .media-body.author_text
+                                h4 Jason Response
+                                .date Sep 14, 2020
+    section.doc_blog_grid_area
+        .container
+            .row.blog_grid_tab
+                .col-lg-4.col-sm-6
+                    .blog_grid_post.wow.fadeInUp
+                        img(src='img/blog-grid/blog_grid_post1.jpg' alt='')
+                        .grid_post_content
+                            .post_tag
+                                a(href='#') 18 Min Read
+                                a.c_blue(href='#') WordPress
+                            a(href='blog-single.html')
+                                h4.b_title Is Your Store Safe From Magento Killer?
+                            p The pressure to keep our skills sharp is constant. Mastering new skills may...
+                            .media.post_author
+                                .round_img
+                                    img(src='img/blog-grid/author_1.jpg' alt='')
+                                .media-body.author_text
+                                    h4 Jason Response
+                                    .date Sep 14, 2020
+                .col-lg-4.col-sm-6
+                    .blog_grid_post.wow.fadeInUp(data-wow-delay='0.2s')
+                        img(src='img/blog-grid/blog_grid_post2.jpg' alt='')
+                        .grid_post_content
+                            .post_tag
+                                a(href='#') 18 Min Read
+                                a.cat-KbDoc.orange(href='#') KbDoc
+                            a(href='blog-single.html')
+                                h4.b_title 70 Best Startups You Need to Watch Out for
+                            p The pressure to keep our skills sharp is constant. Mastering new skills may...
+                            .media.post_author
+                                .round_img
+                                    img(src='img/blog-grid/author_2.jpg' alt='')
+                                .media-body.author_text
+                                    h4 Druid Wensleydale
+                                    .date Sep 14, 2020
+                .col-lg-4.col-sm-6
+                    .blog_grid_post.wow.fadeInUp(data-wow-delay='0.4s')
+                        img(src='img/blog-grid/blog_grid_post3.jpg' alt='')
+                        .grid_post_content
+                            .post_tag
+                                a(href='#') 10 Min Read
+                                a.cat-laravel.green(href='#') Laravel
+                            a(href='blog-single.html')
+                                h4.b_title Create Conditional Logic Forms &amp; Publish
+                            p The pressure to keep our skills sharp is constant. Mastering new skills may...
+                            .media.post_author
+                                .round_img
+                                    img(src='img/blog-grid/author_3.jpg' alt='')
+                                .media-body.author_text
+                                    h4 Douglas Lyphe
+                                    .date Nov 10, 2020
+    section.doc_action_area_three
+        img.p_absolute.shadows(src='img/blog-grid/shadow_action.png' alt='')
+        img.p_absolute.b_man(src='img/blog-grid/man.png' alt='')
+        .container
+            .row
+                .col-lg-5
+                    .action_content
+                        h2
+                            | Want to read more about your favourite 
+                            span topic?
+                        p Get regular updates in your inbox
+                .col-lg-7
+                    form.footer_subscribe_form.action_subscribe_form(action='#')
+                        .form-group
+                            input.form-control(type='email' placeholder='Email Address')
+                            button.s_btn(type='submit')
+                                | Subcribe Now 
+                                i.arrow_right
+                        .form-check
+                            input#defaultCheck1.form-check-input(type='checkbox' value='')
+                            label.form-check-label(for='defaultCheck1')
+                                | I agree to the KbDoc
+    include _footer
+// Back to top button
+a#back-to-top(title='Back to Top')
+include _js

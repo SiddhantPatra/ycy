@@ -1,0 +1,84 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='../img/ycylogo.png' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='../assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='../assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='../assets/animation/animate.css')
+    link(rel='stylesheet' href='../css/style.css')
+    link(rel='stylesheet' href='../css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    title= blog.blogHeading
+.body_wrapper
+
+    include _header
+
+
+    section.breadcrumb_area
+        img.p_absolute.bl_right(src='../img/home_one/b_leaf.svg' alt='')
+        img.p_absolute.star(src='../img/home_one/banner_bg.png' alt='')
+        img.p_absolute.wave_shap_one(src='../img/blog-classic/shap_01.png' alt='')
+        img.p_absolute.wave_shap_two(src='../img/blog-classic/shap_02.png' alt='')
+        img.p_absolute.one.wow.fadeInRight(src='../img/home_one/b_man_two.png' alt='')
+        .container.custom_container
+
+    section.blog_area.mt-2.pt-2
+        .container
+            .row
+                .col-lg-8
+                    .blog_single_info
+                        .blog_single_item
+                            a.blog_single_img(href='#')
+                                img(src=`../blogs/${blog.blogImage}` alt=`Photo of ${blog.blogHeading}`)
+                            - let mystring = blog.blogContent
+                            a(href=`/${blog._id}/blog`)
+                                .widget.about_widget
+                                    .text
+                                        h3.text-center= blog.blogHeading
+                                    .div 
+                                        p.text-center.mb-0 Created On
+                                        p.text-center.mt-0= blog.createdOn.toLocaleDateString('en-in', { year:"numeric", month:"numeric", day:"numeric",hour:"numeric",minute:"numeric",second:"numeric"}) 
+                            p!= mystring.replace(/"/g, ' ')
+                .col-lg-4
+                    .blog_sidebar.pl-40
+                        .widget.about_widget
+                            .img
+                                img(src=`../img/users/${blog.author.photo}` alt=`Photo of ${blog.author.photo}`)
+                            .text
+                                a(href='#')
+                                    h3.text-center= blog.author.name
+                                    p.text-center= blog.author.role
+                        .widget.comments_widget
+                            h4.c_head Recent Blogs
+                            ul.list-unstyled.recent_comments
+                                each recentBlog,index in recentBlogs 
+                                    li
+                                        h6
+                                            i.icon_chat_alt
+                                            span= recentBlog.author.name
+                                        a.text(href=`/${recentBlog._id}/blog`)
+                                            span= recentBlog.blogHeading
+
+                        .widget.instragram_widget
+                            h4.c_head Instragram
+                            .instragram_info
+                                a.instragram_item(href='#')
+                                    img(src='../img/blog-single/image_01.jpg' alt='')
+                                a.instragram_item(href='#')
+                                    img(src='../img/blog-single/image_02.jpg' alt='')
+                                a.instragram_item(href='#')
+                                    img(src='../img/blog-single/image_03.jpg' alt='')
+                                a.instragram_item(href='#')
+                                    img(src='../img/blog-single/image_04.jpg' alt='')
+                                a.instragram_item(href='#')
+                                    img(src='../img/blog-single/image_05.jpg' alt='')
+                                a.instragram_item(href='#')
+                                    img(src='../img/blog-single/image_06.jpg' alt='')
+    include _footer
+    // Back to top button
+    a#back-to-top(title='Back to Top')
+include _js

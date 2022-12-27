@@ -1,0 +1,246 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='/img/ycylogo.png' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='/assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='/assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='/assets/animation/animate.css')
+    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet' href='/css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    title Your Notes
+    style.
+        .display_card{
+        background-color: #cccccc5c;
+        padding: 6px;
+        margin-top: 10px;
+        border-radius: 5px;
+        box-shadow: rgb(0 0 0 / 16%) 0px 1px 0px;
+        height: 100%;
+        }
+        .display_card img{
+        width: 200px;
+        display: block;
+        margin:auto;
+        }
+        .note_title h5{
+        font-size: 16px;
+        font-weight: 500;
+        }
+        .note_content p{
+        margin:0px;
+        font-size:13px;
+        font-weight:200;
+        line-height:18px;
+        }
+    style.
+        .user-profile{
+        border: 1px solid #cccccc;
+        padding: 20px 12px 20px 12px;
+        margin-top: 45px;
+        min-width: 250px;
+        border-radius: 5px;
+        }
+        .user-img img{
+        /* display: block;
+        margin: auto;
+        border: 10px solid #fff;*/
+        width: 61px;
+        box-shadow: 0 0 12px 8px rgb(0 0 0 / 3%);
+        }
+        .dashboard{
+        border: 1px solid #cccccc;
+        min-width: 250px;
+        margin-top: 20px;
+        padding: 0px 0px 0px 0px;
+        border-radius: 5px;
+        background-color:#fff;
+        }
+        .dashboard .ul li{
+        list-style: none;
+        display: block;
+        padding-left:20px;
+        }
+        .dashboard .ul li a{
+        color: #000;
+        padding-top: 10px;
+        font-size: 20px;
+        margin-left:10px;
+        }
+        .dashboard li .fa{
+        color:#000;
+        }
+        .active{
+        background-color:lightgrey;
+        border: 1px solid #cccccc;
+        padding: 10px;
+        margin-bottom: 13px;
+        }
+        .card{
+        background-color: #ff652f;
+        padding: 30px;
+        }
+        #green{
+        background-color: green;
+        }
+        #grey{
+        background-color: grey;
+        }
+        .edit-prf-btn button{
+        width: 240px;
+        border: none;
+        padding: 10px;
+        border-radius: 6px;
+        text-align: center;
+        }
+        .dashboard_nav{
+        display: flex;
+        justify-content: space-start;
+        align-items: center;
+        }
+        .dashboard_nav li{
+        list-style-type: none;
+        margin-left: 20px;
+        }
+        .dashboard_nav li a{
+        font-size: 18px;
+        color: #000;
+        }
+        .simple-pagination .current {
+            color: #FFF;
+            background-color: #EC6B25;
+            //- border-color: #FF7182;
+        }
+        .simple-pagination .prev.current, .simple-pagination .next.current {
+            background: #EC6B25;
+        }
+        .answer__edit {
+            text-transform: uppercase;
+            color: #ffffff;
+            transition: all 0.3s;
+            height: 2rem;
+            width: 6rem;
+            padding: 0.3rem 0;
+            border: unset;
+            background-color: #EC6B25;
+            border-radius: 0.5rem;
+            margin-right: .3rem;
+            }
+
+body
+    .body_wrapper
+        include _header
+
+        section.breadcrumb_area
+            img.p_absolute.bl_right(src='/img/home_one/b_leaf.svg' alt='')
+            img.p_absolute.star(src='/img/home_one/banner_bg.png' alt='')
+            img.p_absolute.wave_shap_one(src='/img/blog-classic/shap_01.png' alt='')
+            img.p_absolute.wave_shap_two(src='/img/blog-classic/shap_02.png' alt='')
+            img.p_absolute.one.wow.fadeInRight(src='/img/home_one/b_man_two.png' alt='')
+            .container
+                .breadcrumb_content_two.text-center
+                    h2 Notes
+
+        section.doc_solution_area.mb-4
+            .sidebar-menu-wrapper
+                .side-bar
+                    .container
+                        .d-flex.flex-row.flex-wrap
+                            .col-md-3
+                                .dashboard.z-depth-1.wow.fadeInLeft(data-wow-delay='0.3s')
+                                    h3.text-center.mt-2 Filter
+                                    hr
+                                    .card-body.py-md-4
+                                        form.notesFilter
+                                            .form-field.subject.form-group
+                                                label.label Subject
+                                                select#subject.form-control
+                                                    option(selected='' value='') Pick A Subject
+                                                    option(value='Math') Math
+                                                    option(value='English') English
+                                                    option(value='Hindi') Hindi
+                                                    option(value='General Knowledge ') General Knowledge 
+                                                    option(value='Odia') Odia
+                                                    option(value='Science') Science
+                                                    option(value='Social studies') Social studies
+                                                    option(value='Economics') Economics
+                                                    option(value='Business Studies') Business Studies
+                                                    option(value='Tourism') Tourism
+                                                    option(value='History') History
+                                                    option(value='Political Science') Political Science
+                                                    option(value='Mass Communication') Mass Communication
+                                                    option(value='Introduction Law') Introduction Law
+                                                    option(value='Sociology') Sociology
+                                                    option(value='Environmental Science') Environmental Science
+                                                    option(value='Geology') Geology
+                                                    option(value='Urban Studies') Urban Studies
+                                            .form-field.subject.form-group
+                                                label.label Class
+                                                select#className.form-control
+                                                    option(selected='' value='') Pick A Class
+                                                    option(value='1') Class 1
+                                                    option(value='2') Class 2
+                                                    option(value='3') Class 3
+                                                    option(value='4') Class 4
+                                                    option(value='5') Class 5
+                                                    option(value='6') Class 6
+                                                    option(value='7') Class 7
+                                                    option(value='8') Class 8
+                                                    option(value='9') Class 9
+                                                    option(value='10') Class 10
+                                                    option(value='11') Class 11
+                                                    option(value='12') Class 12
+                                            .text-center.banner_button
+                                                button.btn.btn-primary Submit
+                            .col-md-9 
+                                .container
+                                    -if(notes=='') 
+                                        h5.text-center.text-danger.m-5 ⚠️ No Data Available!!! ⚠️ 
+                                    .row.list-wrapper.notes
+
+                                        each note,index in notes 
+                                            .col-md-3.my-3.list-item
+                                                .display_card.z-depth-1.wow.fadeInRight
+                                                    img.img-fluid(src=`/notes/${note.avtar}` alt=`Photo of ${note.name}`)
+                                                    .note_title 
+                                                        h5.mt-2.p-2= note.name
+                                                    .note_content.ml-1
+
+                                                        p= 'Class : '+note.className
+                                                        p= 'Subject : '+note.subject
+                                                        p= 'Language : '+note.language
+                                                        p= 'Created On : '+note.creationOn.toLocaleDateString('en-in', { year:"numeric", month:"numeric", day:"numeric",hour:"numeric",minute:"numeric",second:"numeric"}) 
+                                                        p.row.mt-1 
+                                                            span='Uploader : '+note.userId.name 
+                                                            img.nav__user-img2.ml-2(style='height: 1.2rem;width: 1.2rem;border-radius: 50%;' src=`/img/users/${note.userId.photo}` alt=`Photo of ${note.userId.photo}` class="nav__user-img" )
+                                                        .d-flex.flex-row.flex-wrap.justify-content-around.m-1
+                                                            .col-md-6.answers.answers__change
+                                                                a.text-white(href=`/notes/${note.notespdf}#toolbar=0` target="_blank") 
+                                                                    button.note__change.note__edit.btn-5.answer__change.answer__edit.p-1 View 
+                                                        .d-flex.flex-row.flex-wrap.justify-content-around
+                                                            - if(user)
+                                                                - if (note.userId.id === user.id || user.role =='admin' )
+                                                                    .col-md-6.answers.answers__change
+                                                                        button.note__change.note__delete.btn-5.answer__change.answer__delete.px-4#note__delete(data-note-id=`${note.id}`) Delete
+
+
+                                    div#pagination-container.mt-4
+
+
+        include _footer
+include _js
+
+script(type='text/javascript' src='/js/jquery.simplePagination.js') 
+script(type='text/javascript' src="/js/pagination_8.js")
+script.
+    $(function() {
+        $(selector).pagination({
+            items: 10000,
+            itemsOnPage: 8,
+            cssStyle: 'light-theme'
+        });
+    });

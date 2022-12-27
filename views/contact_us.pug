@@ -1,0 +1,88 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='img/favicon.ico' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='assets/animation/animate.css')
+    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    title YCY
+.body_wrapper 
+    include _header
+    section.breadcrumb_area.breadcrumb_area_four
+        img.p_absolute.bl_left(src='img/v.svg' alt='')
+        img.p_absolute.bl_right(src='img/home_one/b_leaf.svg' alt='')
+        img.p_absolute.one.wow.fadeInRight(src='img/home_one/b_man_two.png' alt='')
+        .container
+            .breadcrumb_content_two.text-center
+                h2 Contact Us 
+    section.contact_area.sec_pad
+        .container
+            .section_title.text-left
+                h2.h_title.wow.fadeInUp Need to speak us?
+            .get_info_inner
+                .row.get_info_item.align-items-center.justify-content-between
+                    .col-lg-4.col-sm-5
+                        .media
+                            img(src='img/email.png' alt='')
+                            .media-body
+                                h5.h5.bold Email
+                                p Monday to Friday
+                    .col-lg-8.col-sm-7.d-flex.align-items-center.justify-content-between
+                        .time
+                            | Expected response time: 
+                            span 72 hours
+                        a.doc_border_btn.doc_border_btn_two(href='#') Email Us
+                .row.get_info_item.align-items-center.justify-content-between
+                    .col-lg-4.col-sm-5
+                        .media
+                            img(src='img/twitter.png' alt='')
+                            .media-body
+                                h5.h5.bold Twitter
+                                p Monday to Friday
+                    .col-lg-8.col-sm-7.d-flex.align-items-center.justify-content-between
+                        .time
+                            | Expected response time: 
+                            span 72 hours
+                        a.doc_border_btn.doc_border_btn_two(href='#') Send Us a Tweet
+                .row.get_info_item.align-items-center.justify-content-between
+                    .col-lg-4.col-sm-5
+                        .media
+                            img(src='img/community.png' alt='')
+                            .media-body
+                                h5.h5.bold Community
+                                p Monday to Friday
+                    .col-lg-8.col-sm-7.d-flex.align-items-center.justify-content-between
+                        .time
+                            | Expected response time: 
+                            span 72 hours
+                        a.doc_border_btn.doc_border_btn_two(href='#') Ask The Community
+            .contact_info
+                form.form.contact_form.form-enquiry
+                    .row.contact_fill
+                        .col-lg-4.form-group
+                            h6 Full Name 
+                            input#name.form-control(type='text' placeholder='Enter your name here')
+                        .col-lg-4.form-group
+                            h6 Email
+                            input#email.form-control(type='email' placeholder='info@gmail.com')
+                        .col-lg-4.form-group
+                            h6 Phone no
+                            input#contact.form-control(type='text' placeholder='Mobile No')
+                        .col-lg-12.form-group
+                            h6 Message
+                            textarea#message.form-control.message(type='text' placeholder='Enter Your Text ...')
+                        .col-lg-12.form-group
+                            //- button.btn.action_btn.thm_btn(type='submit') 
+                            button.btn.btn-primary(name='submit') Send Message
+
+    include _footer
+    // Back to top button
+    a#back-to-top(title='Back to Top')
+include _js

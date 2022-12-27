@@ -1,0 +1,72 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='img/ycylogo.png' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='assets/animation/animate.css')
+    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    title YCY
+    style.
+        /* /Book Review/ */
+        .book_img{
+            max-width:300px;
+            max-height: 250px;
+        }
+.body_wrapper
+    include _header
+    section.doc_banner_area_two.pb-5.mt-3
+        .b_plus.one(data-parallax='{"x": -10, "y": 80, "rotateY":0}')
+            img(src='img/home_two/plus.png' alt='')
+        .b_plus.two(data-parallax='{"x": -10, "y": 80, "rotateY":0}')
+            img(src='img/home_two/plus_one.png' alt='')
+        .b_round.r_one(data-parallax='{"x": 0, "y": 100, "rotateZ":0}')
+        .b_round.r_two(data-parallax='{"x": -10, "y": 80, "rotateY":0}')
+            img(src='img/home_two/plus.png' alt='')
+        .container
+            .row
+                .col-md-6
+                    .doc_banner_text_two.wow.fadeInLeft
+                        h6 Best way to learn from anywhere
+                        h2
+                            | Know About
+                            br
+                            |  Your Book
+                        form.banner_search_form(action='#')
+                            input.form-control(type='search' placeholder='Search the Knowledge Base')
+                            button.search_btn(type='submit')
+                                i.fas.fa-search
+                .col-md-6
+                    .side-img.mt-2.wow.fadeInRight
+                        img.img-fluid(src='img/herobanner.jpg' style='width:430px;')
+    section.doc_solution_area.pt-5.pb-5
+        .container
+            .row.z-depth-1.wow.fadeInLeft(data-wow-delay='0.3s')
+                .col-md-4
+                    .Classes
+                        img.img-fluid(src='img/Group 2234.png')
+                        .classes_content
+                            h4.text-center Schedule at your own Time
+                .col-md-4
+                    .Classes
+                        img.img-fluid(src='img/Group 2264.png')
+                        .classes_content
+                            h4.text-center Connect with Teacher
+                .col-md-4
+                    .Classes
+                        img.img-fluid(src='img/Group 2265.png')
+                        .classes_content
+                            h4.text-center Clear all your Doubts
+    section.doc_solution_area.pt-2.pb-2.mt-5
+        .d-flex.flex-row.justify-content-between
+            .container-fluid
+                img(src='./img/Frame 259.png' alt='')
+
+    include _footer
+include _js

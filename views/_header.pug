@@ -1,0 +1,89 @@
+
+nav#sticky.navbar.navbar-expand-lg.menu_two
+    .container
+        a.navbar-brand(href='/')
+            img(src='/img/ycylogo.png' srcset='/img/ycylogo.png 2x' alt='logo')
+        button.navbar-toggler.collapsed(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            span.menu_toggle
+                span.hamburger
+                    span
+                    span
+                    span
+                span.hamburger-cross
+                    span
+                    span
+        #navbarSupportedContent.collapse.navbar-collapse
+            .ml-auto  
+
+                //- span= user
+                if user 
+                    //- p= user.role
+                    if (user.role  === "user" || user.role === "teacher")
+                        ul.navbar-nav.menu.dk_menu.ml-auto
+                            li.nav-item.dropdown.submenu 
+                                a.nav-item(href='/ask-question' )
+                                    button.text-center  Ask Questions
+                            li.nav-item.dropdown.submenu 
+                                li.nav-item.nav-link.mt-2
+                                    a.nav-link(href='/all-questions')  All Questions
+                            li.nav-item.dropdown.submenu
+                                a.nav-item.nav-link.dropdown-toggle.mt-2(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Note 
+                                i.arrow_carrot-down_alt2.mobile_dropdown_icon(aria-hidden='true' data-toggle='dropdown')
+                                ul.dropdown-menu
+                                    li.nav-item
+                                        a.nav-link(href='/upload-notes')  Upload 
+                                    li.nav-item
+                                        a.nav-link(href='/view-notes') View
+                            li.nav-item.dropdown.submenu 
+                                //- a.nav-item(href='ask_question.html')
+                                    button Ask Questions
+                                a.nav-item(href='/me' style='margin-left: 4rem') 
+                                    img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.photo}` class="nav__user-img" )
+                                    span= user.name.split(' ')[0]
+                                a.nav_btn.nav__el--logout.text-white Log out 
+                    else if (user.role === "admin")
+                        ul.navbar-nav.menu.dk_menu.ml-auto
+                            li.nav-item.dropdown.submenu 
+                                a.nav-item(href='/ask-question' )
+                                    button.text-center  Ask Questions
+                            li.nav-item.dropdown.submenu
+                                a.nav-item.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Users
+                                i.arrow_carrot-down_alt2.mobile_dropdown_icon(aria-hidden='true' data-toggle='dropdown')
+                                ul.dropdown-menu
+                                    li.nav-item
+                                        a.nav-link.text-center(href='/view-students') Student
+                                    li.nav-item
+                                        a.nav-link.text-center(href='/view-teachers') Teacher
+                                    li.nav-item
+                                        a.nav-link.text-center(href='/view-teacher-applications') Teacher Applications
+                            li.nav-item.dropdown.submenu
+                                a.nav-item.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Blog 
+                                i.arrow_carrot-down_alt2.mobile_dropdown_icon(aria-hidden='true' data-toggle='dropdown')
+                                ul.dropdown-menu
+                                    li.nav-item
+                                        a.nav-link(href='/create-blog') Upload
+                                    li.nav-item
+                                        a.nav-link(href='/view-blogs') View 
+                            li.nav-item.dropdown.submenu
+                                a.nav-item.nav-link.dropdown-toggle(href='/view-enquiry' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Enquiry 
+                                i.arrow_carrot-down_alt2.mobile_dropdown_icon(aria-hidden='true' data-toggle='dropdown')
+                            li.nav-item.dropdown.submenu
+                                a.nav-item.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Note 
+                                i.arrow_carrot-down_alt2.mobile_dropdown_icon(aria-hidden='true' data-toggle='dropdown')
+                                ul.dropdown-menu
+                                    li.nav-item
+                                        a.nav-link(href='/upload-notes')  Upload 
+                                    li.nav-item
+                                        a.nav-link(href='/view-notes') View
+                            li.nav-item.dropdown.submenu  
+                                a.nav-item(href='/me' style='margin-left: 4rem') 
+                                    img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.photo}` class="nav__user-img" )
+                                    span= user.name.split(' ')[0]
+                                a.nav_btn.nav__el--logout.text-white Log out 
+
+                else 
+                    a.nav-item(href='/ask-question' )
+                        button.text-center  Ask Questions
+                    a.nav_btn(href='/login') Log In
+                    a.nav_btn(href='/signup' style='margin-left: 0') Sign Up
+

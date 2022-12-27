@@ -1,0 +1,117 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='/img/ycylogo.png' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='/assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='/assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='/assets/animation/animate.css')
+    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet' href='/css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+
+    title YCY
+body
+    .body_wrapper
+        include _header
+
+        section.breadcrumb_area
+            img.p_absolute.bl_right(src='/img/home_one/b_leaf.svg' alt='')
+            img.p_absolute.star(src='/img/home_one/banner_bg.png' alt='')
+            img.p_absolute.wave_shap_one(src='/img/blog-classic/shap_01.png' alt='')
+            img.p_absolute.wave_shap_two(src='/img/blog-classic/shap_02.png' alt='')
+            img.p_absolute.one.wow.fadeInRight(src='/img/home_one/b_man_two.png' alt='')
+            .container.custom_container
+
+                form.banner_search_form.banner_search_form_two.form-search-question
+                    .input-group
+                        input#question.form-control(type="text" placeholder="Search") 
+                        select#subject.form-control
+                            option(selected='' value='') Pick A Subject
+                            option(value='Math') Math
+                            option(value='English') English
+                            option(value='Hindi') Hindi
+                            option(value='General Knowledge ') General Knowledge 
+                            option(value='Odia') Odia
+                            option(value='Science') Science
+                            option(value='Social studies') Social studies
+                            option(value='Economics') Economics
+                            option(value='Business Studies') Business Studies
+                            option(value='Tourism') Tourism
+                            option(value='History') History
+                            option(value='Political Science') Political Science
+                            option(value='Mass Communication') Mass Communication
+                            option(value='Introduction Law') Introduction Law
+                            option(value='Sociology') Sociology
+                            option(value='Environmental Science') Environmental Science
+                            option(value='Geology') Geology
+                            option(value='Urban Studies') Urban Studies
+
+                        button(name='submit')
+                            i.icon_search.text-white
+                            span.text-white.m-2  Search
+
+        section.doc_solution_area.pt-5.pb-5
+            .container
+                .row
+                    .col-md-9.questiondel
+                        .ask_question.list-wrapper
+                            -if(questions=='') 
+                                h5.text-center.text-danger ⚠️ No Data Available!!! ⚠️ Ask A Question. 🤗
+                            each question ,index in questions 
+                                .answer_section.q_answer_section.list-item.mt-4
+                                    h5=index+1 + ': ' +`${question.question}`
+                                    .d-flex.flex-row.flex-wrap.justify-content-between
+                                        .col-md-8
+                                            p.text-info= question.subject
+                                        if user
+                                            - if (question.userId.id === user.id || user.role =='admin' )
+                                                .col-md-4.ml-0 
+                                                    button.btn.btn-sm.btn-danger.note__change.note__delete.btn-5.answer__change.answer__delete.p-1#note__delete(data-question-id=`${question.id}`) Delete
+                                    .d-flex.flex-row.flex-wrap.justify-content-between
+                                        p
+                                            i.fa.fa-comments.mr-2(aria-hidden='true')
+                                            if !user 
+                                                p.text-danger ⚠️ Login to view answer !!! ⚠️ 
+                                            else 
+                                                a(href=`/${question.slug}`) 
+                                                    span= question.answers.length+'  Answers'
+
+                                            p= question.creationOn.toLocaleDateString('en-in', { year:"numeric", month:"numeric", day:"numeric",hour:"numeric",minute:"numeric",second:"numeric"})
+
+                                        p
+                                            img.nav__user-img2(src=`/img/users/${question.userId.photo}` alt=`Photo of ${question.userId.photo}` class="nav__user-img" )
+                                            span=question.userId.name  
+
+
+                            div#pagination-container.mt-4
+                    .col-md-3
+                        aside
+                            .status.wow.fadeInRight
+                                h5 Find Us
+                                hr
+                                .butto_type_fb.mt-2.text-white.d-flex.justify-content-between
+                                    i.fab.fa-facebook.bg_primary
+                                    p.text-white.mt-2 Facebook
+                                .butto_type_tweet.mt-2.text-white.d-flex.justify-content-between
+                                    i.fab.fa-twitter.bg_primary
+                                    p.text-white.mt-2 Twitter
+                                .butto_type_youtube.mt-2.text-white.d-flex.justify-content-between
+                                    i.fab.fa-youtube.bg_primary
+                                    p.text-white.mt-2 Youtube
+        include _footer 
+include _js
+script(type='text/javascript' src='/js/jquery.simplePagination.js') 
+script(type='text/javascript' src="/js/pagination.js")
+script.
+    $(function() {
+        $(selector).pagination({
+            items: 100,
+            itemsOnPage: 10,
+            cssStyle: 'light-theme'
+        });
+    });
+

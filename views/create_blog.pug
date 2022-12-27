@@ -1,0 +1,180 @@
+doctype html
+head
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='img/ycylogo.png' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='assets/animation/animate.css')
+    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    meta(http-equiv='Content-Security-Policy' content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;")
+    title Blog Upload
+
+    script(src=`https://cdn.tiny.cloud/1/${process.env.TINYMCEAPIKEY}/tinymce/6/tinymce.min.js` referrerpolicy='origin')
+    style.
+        .user-profile{
+        border: 1px solid #cccccc;
+        padding: 20px 12px 20px 12px;
+        margin-top: 45px;
+        min-width: 250px;
+        border-radius: 5px;
+        }
+        .user-img img{
+        /* display: block;
+        margin: auto;
+        border: 10px solid #fff;*/
+        width: 61px;
+        box-shadow: 0 0 12px 8px rgb(0 0 0 / 3%);
+        }
+        .dashboard{
+        border: 1px solid #cccccc;
+        min-width: 250px;
+        margin-top: 20px;
+        padding: 0px 0px 0px 0px;
+        border-radius: 5px;
+        background-color:#fff;
+        }
+        .dashboard .ul li{
+        list-style: none;
+        display: block;
+        padding-left:20px;
+        }
+        .dashboard .ul li a{
+        color: #000;
+        padding-top: 10px;
+        font-size: 20px;
+        margin-left:10px;
+        }
+        .dashboard li .fa{
+        color:#000;
+        }
+        .active{
+        background-color:lightgrey;
+        border: 1px solid #cccccc;
+        padding: 10px;
+        margin-bottom: 13px;
+        }
+        .card{
+        background-color: #ff652f;
+        padding: 30px;
+        }
+        #green{
+        background-color: green;
+        }
+        #grey{
+        background-color: grey;
+        }
+        .edit-prf-btn button{
+        width: 240px;
+        border: none;
+        padding: 10px;
+        border-radius: 6px;
+        text-align: center;
+        }
+        .dashboard_nav{
+        display: flex;
+        justify-content: space-start;
+        align-items: center;
+        }
+        .dashboard_nav li{
+        list-style-type: none;
+        margin-left: 20px;
+        }
+        .dashboard_nav li a{
+        font-size: 18px;
+        color: #000;
+        } 
+
+.body_wrapper
+    include _header
+    section.breadcrumb_area
+        img.p_absolute.bl_right(src='img/home_one/b_leaf.svg' alt='')
+        img.p_absolute.star(src='img/home_one/banner_bg.png' alt='')
+        img.p_absolute.wave_shap_one(src='img/blog-classic/shap_01.png' alt='')
+        img.p_absolute.wave_shap_two(src='img/blog-classic/shap_02.png' alt='')
+        img.p_absolute.one.wow.fadeInRight(src='img/home_one/b_man_two.png' alt='')
+        .container.custom_container  
+    section.doc_solution_area.mb-4
+        .sidebar-menu-wrapper
+            .side-bar
+                .container
+                    .row
+                        .col-xl-12.col-md-12
+                            .admin_card.latest-update-card.mt-4
+                                .card-header
+                                    h5 Blog Posting 
+                                .acard-body(style='background:#cccccc;')
+                                    form.form.form-upload-blog(enctype="multipart/form-data")
+                                        .card-body
+                                            .d-flex.flex-row.flex-wrap
+                                                .col-md-4
+                                                    .form-group
+                                                        label(for='blogHeading') Blog Heading
+                                                        input#blogHeading.form-control(type='text' name='heading' value='' required='')
+                                                        input#author(type="hidden" value=`${user.id}`)
+                                                .col-md-4
+                                                    .form-group
+                                                        label(for='category') Blog Category
+                                                        select#category.form-control  
+                                                            option(selected='') Pick A Category
+                                                            option(value='Tutors') Tutors
+                                                            option(value='Students') Students
+                                                            option(value='Education') Education
+                                                            option(value='Success Story') Success Story 
+                                                .col-md-4
+                                                    .form-group
+                                                        label(for='blogImage') Feature Image
+                                                        input#blogImage.form-control(type='file' name='blogImage' placeholder='Banner' style='padding-top: 14px; height: 62px;')
+                                                        b
+                                                            font(color='red') &nbsp;Size : (1920px X 500px)
+                                                .col-md-4
+                                                    .form-group
+                                                        label(for='blogSubContent') Sub Blog Content
+                                                        textarea#blogSubContent.form-control(type='text')
+                                                .col-md-8
+                                                    .form-group
+                                                        label(for='blogContent') Blog Content 
+                                                        textarea#blogContent.form-control(type='text')  
+
+                                            h5.m-b-40 Manage SEO - Meta Tags
+                                            .d-flex.flex-row.flex-wrap
+                                                .col-md-4
+                                                    .form-group.m-b-30
+                                                        label(for='metaTitle') Meta Title
+                                                        input#metaTitle.form-control(type='text' name='metaTitle' )
+                                                .col-md-4
+                                                    .form-group.m-b-30
+                                                        label(for='metaDescription') Meta Description
+                                                        input#metaDescription.form-control(type='text' name='metaDescription' )
+                                                .col-md-4
+                                                    .form-group.m-b-30
+                                                        label(for='metaKeywords') Keywords
+                                                        input#metaKeywords.form-control(type='text' name='metaKeywords')
+                                                .col-md-4
+                                                    .form-group.m-b-30
+                                                        label(for='moreTags') Additional Meta Tags (if any)
+                                                        textarea#moreTags.form-control(name='moreTags')
+                                            .col-md-4
+                                                .form-group
+                                                    button.btn.btn-primary(type='submit') Submit
+
+// /.call-to-action
+include _footer
+include _js  
+script.
+    tinymce.init({ 
+    selector: 'textarea#blogContent',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    });
+    tinymce.init({
+    selector: 'textarea', 
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    }); 

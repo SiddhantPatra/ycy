@@ -1,0 +1,50 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='img/ycylogo.png' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='assets/animation/animate.css')
+    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    title YCY
+.body_wrapper
+    include _header
+    section.breadcrumb_area
+        img.p_absolute.bl_right(src='img/home_one/b_leaf.svg' alt='')
+        img.p_absolute.star(src='img/home_one/banner_bg.png' alt='')
+        img.p_absolute.wave_shap_one(src='img/blog-classic/shap_01.png' alt='')
+        img.p_absolute.wave_shap_two(src='img/blog-classic/shap_02.png' alt='')
+        img.p_absolute.one.wow.fadeInRight(src='img/home_one/b_man_two.png' alt='')
+        .container.custom_container
+            form.banner_search_form.d-flex(action='#')
+                input.form-control(type='search' placeholder='Search For Book')
+                button.search_btn(type='submit')
+                    i.fas.fa-search
+    section.doc_solution_area.pt-2.pb-2
+        .container.mt-3
+            .row
+                .col-md-6.z-depth-1.wow.fadeInLeft(data-wow-delay='0.3s')
+                    .card-body.py-md-4(style='background:#dcc8c82b; border-radius: 6px;')
+                        form(_lpchecked='1')
+                            .form-field.subject.form-group
+                                label.label Book Name
+                                select.form-control(name='subject' form='contact_form' required='')
+                                    option(value='appointment' selected='') math
+                                    option(value='cancellation') English
+                                    option(value='order') science
+                                    option(value='other')  Trigonometry
+                            .form-field.subject.form-group
+                                label Your Question
+                                textarea.form-control
+                            .text-center.banner_button
+                                button.btn.btn-primary Submit
+                .col-md-6.z-depth-1.wow.fadeInRight(data-wow-delay='0.3s')
+                    img.img-fluid.d-block.ml-auto.mr-auto(src='./img/form.webp' style='max-width: 350px;')
+    include _footer
+include _js

@@ -1,0 +1,104 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='shortcut icon' href='img/ycylogo.png' type='image/x-icon')
+  // Bootstrap CSS
+  link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+  // icon css
+  link(rel='stylesheet' href='assets/elagent-icon/style.css')
+  link(rel='stylesheet' href='assets/animation/animate.css')
+  link(rel='stylesheet' href='css/style.css')
+  link(rel='stylesheet' href='css/responsive.css')
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+  title YCY
+  style.
+    .card-body .form-control {
+    padding: 8px;
+    border: 1px solid #cccccc;
+    height: 45px;
+    }
+    .card-body label {
+    color: #000;
+    font-weight: 500;
+    }
+.body_wrapper
+  include _header
+  section.breadcrumb_area
+    img.p_absolute.bl_right(src='img/home_one/b_leaf.svg' alt='')
+    img.p_absolute.star(src='img/home_one/banner_bg.png' alt='')
+    img.p_absolute.wave_shap_one(src='img/blog-classic/shap_01.png' alt='')
+    img.p_absolute.wave_shap_two(src='img/blog-classic/shap_02.png' alt='')
+    img.p_absolute.one.wow.fadeInRight(src='img/home_one/b_man_two.png' alt='')
+
+  section.doc_solution_area.pt-5.pb-5
+
+    .container
+      .row.justify-content-center
+        .col-md-6
+          .card.pt-4.pb-4
+            h2.card-title.text-center Note Upload
+            .card-body.py-md-4
+              form.form.form-upload-note(enctype="multipart/form-data")
+                .form-field.subject.form-group
+                  label.label Subject
+                  select#subject.form-control
+                    option(selected='') Pick A Subject
+                    option(value='Math') Math
+                    option(value='English') English
+                    option(value='Hindi') Hindi
+                    option(value='General Knowledge ') General Knowledge 
+                    option(value='Odia') Odia
+                    option(value='Science') Science
+                    option(value='Social studies') Social studies
+                    option(value='Economics') Economics
+                    option(value='Business Studies') Business Studies
+                    option(value='Tourism') Tourism
+                    option(value='History') History
+                    option(value='Political Science') Political Science
+                    option(value='Mass Communication') Mass Communication
+                    option(value='Introduction Law') Introduction Law
+                    option(value='Sociology') Sociology
+                    option(value='Environmental Science') Environmental Science
+                    option(value='Geology') Geology
+                    option(value='Urban Studies') Urban Studies
+                  input#userId(type="hidden" value=`${user.id}`)
+                .form-field.subject.form-group
+                  label.label Class
+                  select#className.form-control
+                    option(selected='') Pick A Class
+                    option(value='1') Class 1
+                    option(value='2') Class 2
+                    option(value='3') Class 3
+                    option(value='4') Class 4
+                    option(value='5') Class 5
+                    option(value='6') Class 6
+                    option(value='7') Class 7
+                    option(value='8') Class 8
+                    option(value='9') Class 9
+                    option(value='10') Class 10
+                    option(value='11') Class 11
+                    option(value='12') Class 12
+
+                .form-group
+                  label Topic Name
+                  input#name.form-control(type='text' placeholder='Name of the topic')
+                .form-group
+                  label.label Language
+                  select#language.form-control
+                    option(selected='') Pick A Language
+                    option(value='Odia') Odia
+                    option(value='Hindi') Hindi
+                    option(value='English') English
+                .form-group
+                  label.label Upload Display Image
+                  input#avtar.form-control(type='file' name='avtar')
+                .form-group
+                  label.label Upload Your Notes(PDF)
+                  input#notespdf.form-control(type='file' name='notespdf') 
+                button.text-center.banner_button.btn.btn-primary submit
+        .col-md-6
+          img.img-fluid(src='img/Group 2262.png')
+  include _footer
+include _js

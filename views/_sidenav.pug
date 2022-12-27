@@ -1,0 +1,35 @@
+.col-md-3
+    .user-profile
+        .row
+            .col-md-4
+                .user-img
+                    img(src=`/img/users/${user.photo}`)
+            .col-md-8
+                p.bold(style='margin-bottom:0')
+                    span.bold= user.name 
+                | (
+                span.font-italic= user.role
+                    | )
+                p Joined: 
+                    span= user.creationOn.toLocaleDateString('en-us', { year:"numeric", month:"long", day:"numeric"})
+    .dashboard
+        .ul
+            li#dashboard.p-3
+                i.fa.fa-tachometer.h5(aria-hidden='true')
+                a(href='/me') Dashboard
+            li#myQuestions.p-3
+                a(href='/my-questions') Your Question
+            li#unansweredQuestions.p-3
+                a(href='/unanswered-questions') Unanswered Question
+            li#myAnswers.p-3
+                a(href='/my-answers') Your Answer
+            li#mynotes.p-3
+                a(href='/my-notes') Your Notes
+            li#mybooks.p-3
+                a(href='#') Your Book Reviews
+            li#mycolleges.p-3
+                a(href='#') Your College Reviews
+            if (user.role == 'admin')
+                li#myblogs.p-3
+                    a(href='/my-blogs') Your Blogs
+

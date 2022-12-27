@@ -1,0 +1,99 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='img/ycylogo.png' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='assets/animation/animate.css')
+    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    title YCY
+body
+    .body_wrapper
+        include _header
+        section.breadcrumb_area
+            img.p_absolute.bl_right(src='img/home_one/b_leaf.svg' alt='')
+            img.p_absolute.star(src='img/home_one/banner_bg.png' alt='')
+            img.p_absolute.wave_shap_one(src='img/blog-classic/shap_01.png' alt='')
+            img.p_absolute.wave_shap_two(src='img/blog-classic/shap_02.png' alt='')
+            img.p_absolute.one.wow.fadeInRight(src='img/home_one/b_man_two.png' alt='')
+            .container.custom_container
+
+        section.doc_solution_area.pt-5.pb-5
+            .container
+                .row
+                    .col-md-9
+                        .ask_question
+                            form.form.form-ask-question
+                                .form-group.wow.fadeInLeft
+                                    label What Is Your Question?
+                                    textarea#question.form-control(rows='3')
+                                    if user    
+                                        input#userId(type="hidden" value=`${user.id}`)
+
+                                .input-group
+                                    .input-group-append
+                                        select#subject.custom-select
+                                            option(selected='') Pick A Subject
+                                            option(value='Math') Math
+                                            option(value='English') English
+                                            option(value='Hindi') Hindi
+                                            option(value='General Knowledge ') General Knowledge 
+                                            option(value='Odia') Odia
+                                            option(value='Science') Science
+                                            option(value='Social studies') Social studies
+                                            option(value='Economics') Economics
+                                            option(value='Business Studies') Business Studies
+                                            option(value='Tourism') Tourism
+                                            option(value='History') History
+                                            option(value='Political Science') Political Science
+                                            option(value='Mass Communication') Mass Communication
+                                            option(value='Introduction Law') Introduction Law
+                                            option(value='Sociology') Sociology
+                                            option(value='Environmental Science') Environmental Science
+                                            option(value='Geology') Geology
+                                            option(value='Urban Studies') Urban Studies
+                                if user 
+                                    button.mt-4 submit
+                                if !user 
+                                    p.text-danger.mt-4 ⚠️ Login to Ask Question !!! ⚠️  
+                    .col-md-3
+                        aside
+                            .status.wow.fadeInRight
+                                p Status
+                                hr
+                                .butto_type.mt-2
+                                    a(href='/all-questions')
+                                        .d-flex.justify-content-between
+                                            i.fa.fa-question-circle
+                                            span= '  View All Questions '  
+                            .status.mt-3.wow.fadeInRight
+                                p Find Us
+                                hr
+                                .butto_type_fb.mt-2.text-white.d-flex.justify-content-between
+                                    i.fab.fa-facebook.bg_primary
+                                    p.text-white.mt-2 Facebook
+                                .butto_type_tweet.mt-2.text-white.d-flex.justify-content-between
+                                    i.fab.fa-twitter.bg_primary
+                                    p.text-white.mt-2 Twitter
+                                .butto_type_youtube.mt-2.text-white.d-flex.justify-content-between
+                                    i.fab.fa-youtube.bg_primary
+                                    p.text-white.mt-2 Youtube
+                            .status.mt-3.wow.fadeInRight
+                                p Recent Question
+                                hr
+                                h6 What is Triangle ?
+                                p(style='font-family: poppins;')
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    | tempor incididunt ut labore et dolore magna aliqua.
+                                h6 What is data base ?
+                                p(style='font-family: poppins;')
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    | tempor incididunt ut labore et dolore magna aliqua.
+        include _footer
+include _js

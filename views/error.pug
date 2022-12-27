@@ -1,0 +1,38 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='img/favicon.ico' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='assets/animation/animate.css')
+    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    title YCY
+.body_wrapper
+    section.error_area.bg_color
+        .error_dot.one
+        .error_dot.two
+        .error_dot.three
+        .error_dot.four
+        .container
+            .error_content_two.text-center
+                .error_img
+                    img.p_absolute.error_shap(src='img/404_bg.png' alt='')
+                    .one.wow.clipInDown(data-wow-delay='1s')
+                        img.img_one(src='img/404_two.png' alt='')
+                    .two.wow.clipInDown(data-wow-delay='1.5s')
+                        img.img_two(src='img/404_three.png' alt='')
+                    .three.wow.clipInDown(data-wow-delay='1.8s')
+                        img.img_three(src='img/404_one.png' alt='')
+                h2 Error. We can&rsquo;t find the page you&rsquo;re looking for.
+                p
+                    | Sorry for the inconvenience. Please go to our homepage or contact us...
+                a.action_btn.box_shadow_none(href='/')
+                    i.arrow_left
+                    | Back to Home Page 
+include _js

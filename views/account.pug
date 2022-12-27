@@ -1,0 +1,193 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='img/ycylogo.png' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='assets/animation/animate.css')
+    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    title view profile
+    style.
+        .user-profile{
+        border: 1px solid #cccccc;
+        padding: 20px 12px 20px 12px;
+        margin-top: 45px;
+        min-width: 250px;
+        border-radius: 5px;
+        }
+        .user-img img{
+        /* display: block;
+        margin: auto;
+        border: 10px solid #fff;*/
+        width: 61px;
+        box-shadow: 0 0 12px 8px rgb(0 0 0 / 3%);
+        }
+        .dashboard{
+        border: 1px solid #cccccc;
+        min-width: 250px;
+        margin-top: 20px;
+        padding: 0px 0px 0px 0px;
+        border-radius: 5px;
+        background-color:#fff;
+        }
+        .dashboard .ul li{
+        list-style: none;
+        display: block;
+        padding-left:20px;
+        }
+        .dashboard .ul li a{
+        color: #000;
+        padding-top: 10px;
+        font-size: 20px;
+        margin-left:10px;
+        }
+        .dashboard li .fa{
+        color:#000;
+        }
+        .active{
+        background-color:lightgrey;
+        border: 1px solid #cccccc;
+        padding: 10px;
+        margin-bottom: 13px;
+        }
+        .card{
+        background-color: #ff652f;
+        padding: 30px;
+        }
+        #green{
+        background-color: green;
+        }
+        #grey{
+        background-color: grey;
+        }
+        .edit-prf-btn button{
+        width: 240px;
+        border: none;
+        padding: 10px;
+        border-radius: 6px;
+        text-align: center;
+        }
+        .dashboard_nav{
+        display: flex;
+        justify-content: space-start;
+        align-items: center;
+        }
+        .dashboard_nav li{
+        list-style-type: none;
+        margin-left: 20px;
+        }
+        .dashboard_nav li a{
+        font-size: 18px;
+        color: #000;
+        }
+body
+.body_wrapper
+    include _header
+    section.breadcrumb_area
+        img.p_absolute.bl_right(src='img/home_one/b_leaf.svg' alt='')
+        img.p_absolute.star(src='img/home_one/banner_bg.png' alt='')
+        img.p_absolute.wave_shap_one(src='img/blog-classic/shap_01.png' alt='')
+        img.p_absolute.wave_shap_two(src='img/blog-classic/shap_02.png' alt='')
+        img.p_absolute.one.wow.fadeInRight(src='img/home_one/b_man_two.png' alt='')
+        .container.custom_container
+
+    section.doc_solution_area
+        .sidebar-menu-wrapper
+            .side-bar
+                .container
+                    .row
+                        include _sidenav
+                        .col-md-9.my-4
+                            .user-dashboard
+                                h3 
+                                    | Change 
+                                    span= user.role 
+                                    |  profile
+                                .profile-form
+                                    form.form.form-user-data
+                                        .form-row
+                                            .form-group.col-md-6
+                                                label(for='name') Name:
+                                                input#name.form-control(type='text', value=`${user.name}`, required, name='name')
+                                            .form-group.col-md-6
+                                                img.form__user-photo(src=`/img/users/${user.photo}`, alt='User photo' style='float:right')
+
+                                        -if(user.role == 'admin'|| user.role == 'teacher')
+                                            .form-row
+                                                .form-group.col-md-6
+                                                    label(for='teachingExperience') Teaching Experience:
+                                                    input#teachingExperience.form-control(type='text' value=`${user.teachingExperience}` required)
+                                                .form-group.col-md-6
+                                                    label(for='desiredClass') Desired Class:
+                                                    input#desiredClass.form-control(type='text' value=`${user.desiredClass}` required)
+                                        -else 
+                                            .form-row
+                                                .form-group.col-md-6 
+                                                    input#teachingExperience.form-control(type='hidden' value=`${user.teachingExperience}` required)
+                                                .form-group.col-md-6 
+                                                    input#desiredClass.form-control(type='hidden' value=`${user.desiredClass}` required)            
+                                        .form-row
+                                            .form-group.col-md-6
+                                                label(for='email') Email:
+                                                input#email.form-control(type='email', value=`${user.email}`, required, name='email')
+                                            .form-group.col-md-6
+                                                label(for='contact') Phone No:
+                                                input#contact.form-control(type='text' value=`${user.contact}` required name='contact')
+                                        .form-row
+
+                                            .form-group.col-md-6
+                                                label(for="photo") Profile Image:
+                                                input.form-control-file(type="file" accept='image/*' id='photo' name='photo')
+                                        .form-button.text-center
+                                            button.btn.btn-success Update
+                            .line &nbsp;
+
+                            .user-dashboard
+                                h3 Password change 
+                                .profile-form
+                                    form.form.form-user-password
+                                        .form-row
+                                            .form-group.col-md-6
+                                                label(for='password-current') Current Password:
+                                                input#password-current.form-control(type='password' placeholder='••••••••', required, minlength='8')
+                                        .form-row
+                                            .form-group.col-md-6
+                                                label(for='password') New Password:
+                                                input#password.form-control(type='password' placeholder='••••••••', required, minlength='8')
+                                            .form-group.col-md-6
+                                                label(for='password-confirm') Confirm Password:
+                                                input#password-confirm.form-control(type='password' placeholder='••••••••', required, minlength='8')
+                                        .form-button.text-center
+                                            button.btn.btn-success.btn--save-password Save password
+                            .line &nbsp;
+
+                            -if(user.role == 'user')
+                                .user-dashboard
+                                    h3 Apply To Become a Tutor
+                                    .profile-form
+                                        -if( user.appliedStatus=='pending') 
+                                            p.text-center.mt-5 Wait for Admin Approval !!! 🤗
+                                        -else
+                                            form.form.form-apply-tutor
+                                                .form-row
+                                                    .form-group.col-md-6
+                                                        label(for='teachingExperienceE') Teaching Experience:
+                                                        input#teachingExperienceE.form-control(type='text' required)
+                                                    .form-group.col-md-6
+                                                        label(for='desiredClassE') Desired Class:
+                                                        input#desiredClassE.form-control(type='text' required)
+                                                .form-button.text-center
+                                                    button.btn.btn-success Apply
+
+    include _footer
+include _js
+script.
+    $(window).on("load", function() {
+        $('#dashboard').addClass("active");
+    });

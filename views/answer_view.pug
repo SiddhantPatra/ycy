@@ -1,0 +1,145 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='img/ycylogo.png' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='./assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='./assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='./assets/animation/animate.css')
+    link(rel='stylesheet' href='./css/style.css')
+    link(rel='stylesheet' href='./css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    title Ask Question search bar
+.body_wrapper
+    include _header
+    section.breadcrumb_area
+        img.p_absolute.bl_right(src='./img/home_one/b_leaf.svg' alt='')
+        img.p_absolute.star(src='./img/home_one/banner_bg.png' alt='')
+        img.p_absolute.wave_shap_one(src='./img/blog-classic/shap_01.png' alt='')
+        img.p_absolute.wave_shap_two(src='./img/blog-classic/shap_02.png' alt='')
+        img.p_absolute.one.wow.fadeInRight(src='./img/home_one/b_man_two.png' alt='')
+        .container.custom_container
+    section.doc_solution_area.pt-5.pb-5
+        .container
+            .row
+                .col-md-9.answers
+                    .teacher_section
+                        .d-flex.align-items-center
+                            img.img-fluid.nav__user-img(src=`/img/users/${question.userId.photo}`)
+                            div
+                                p.ml-3.mt-3.mb-0 
+                                    span.bold= question.userId.name
+                                p.ml-3.mb-0
+                                    span=  question.creationOn.toLocaleDateString('en-in', { year:"numeric", month:"numeric", day:"numeric",hour:"numeric",minute:"numeric",second:"numeric"}) 
+                            mark.ml-4.mt-3 
+                                span= question.userId.role
+                        .mt-3
+                            h6=question.question
+                            .answer_section.mt-4.d-flex.justify-content-between
+                                p
+                                    i.fa.fa-comments.mr-2(aria-hidden='true')
+                                    a= question.answers.length+' Answer' 
+                                // Button trigger modal
+                                button.btn-5(type='button' data-toggle='modal' data-target='#exampleModal')
+                                    | Add Answer
+                                // Modal
+                                #exampleModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+                                    .modal-dialog(role='document')
+                                        .modal-content
+                                            form.form-group.wow.fadeInLeft.answer--form
+
+                                                .modal-header
+                                                    h5#exampleModalLabel.modal-title 
+                                                        span= question.question
+                                                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                                        span(aria-hidden='true') &times;
+                                                .modal-body
+                                                    textarea#answer.form-control(rows='3' placeholder='Write Your Answer......')
+                                                    input#questionId(type='hidden' value=`${question.id}`)
+                                                    input#userId(type='hidden' value=`${user.id}`)
+
+                                                .modal-footer
+                                                    button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                                                    button.btn.btn-primary Submit
+
+                    each answer ,index in question.answers
+                        .ask_question1.mt-4
+
+                            .q_answer_section
+                                .d-flex.align-items-center.flex-wrap
+
+                                    img.img-fluid.nav__user-img(src=`/img/users/${answer.user.photo}`)
+                                    .col-md-6
+                                        p.ml-3.mb-0 
+                                            span= answer.user.name
+                                            mark.ml-4.mt-3 
+                                                span= answer.user.role
+                                        p.ml-3.mb-0
+                                            span= answer.createdOn.toLocaleDateString('en-in', { year:"numeric", month:"numeric", day:"numeric",hour:"numeric",minute:"numeric",second:"numeric"})
+                                    .col-md-4.row
+                                        - if(user)
+                                            - if (answer.user.id === user.id )
+                                                .col-md-4.answers.answers__change
+                                                    button.btn.btn-sm.answer__change.answer__edit(data-answer-id=`${answer.id}`, data-answer-answer=`${answer.answer}` data-toggle='modal' data-target='#answers__card' ) Edit 
+                                                    // Modal
+                                                    #answers__card.modal.fade(tabindex='-1' role='dialog' aria-labelledby='answers__cardLabel' aria-hidden='true')
+                                                        .modal-dialog(role='document')
+                                                            .modal-content
+                                                                form.form-group.wow.fadeInLeft.answersUpdate
+
+                                                                    .modal-header
+                                                                        h5#answers__cardLabel.modal-title 
+                                                                            span= question.question
+                                                                        button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                                                            span(aria-hidden='true') &times;
+                                                                    .modal-body
+                                                                        textarea#newanswer.form-control(rows='3'   placeholder=`${answer.answer}`) 
+                                                                            = `${answer.answer}`
+                                                                        input#answerId(type='hidden' value=`${answer.id}`)
+
+
+                                                                    .modal-footer
+                                                                        button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                                                                        button.btn.btn-success Submit
+
+                                                    // Modal
+                                                    #answer__delete.modal.fade(tabindex='-1' role='dialog' aria-labelledby='answer__deleteLabel' aria-hidden='true')
+                                                        .modal-dialog(role='document')
+                                                            .modal-content
+                                                                form.answersDelete.form-group.wow.fadeInLeft
+
+                                                                    .modal-body
+                                                                        button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                                                            span(aria-hidden='true') &times;
+                                                                        br  
+                                                                        h2.text-danger.text-center 
+                                                                            | Confirm Delete ?
+                                                                        input#answerIdDel(type='hidden' value=`${answer.id}`)
+                                                                        br
+                                                                        .d-flex.justify-content-center
+                                                                            button.btn.btn-danger.text-center(type="submit") Delete
+                                            - if (answer.user.id === user.id || user.role =='admin' )
+                                                .col-md-4.answers.answers__change
+                                                    button.btn.btn-sm.note__change.note__delete.btn-5.answer__change.answer__delete.p-1#note__delete(data-answer-id=`${answer.id}`) Delete
+                            p.mt-4
+                                span='Ans '+ (index+1) + ' : ' +`${answer.answer}` 
+
+                .col-md-3
+                    aside
+                        .status.wow.fadeInRight
+                            h5 Find Us
+                            hr
+                            .butto_type_fb.mt-2.text-white.d-flex.justify-content-between
+                                i.fab.fa-facebook.bg_primary
+                                p.text-white.mt-2 Facebook
+                            .butto_type_tweet.mt-2.text-white.d-flex.justify-content-between
+                                i.fab.fa-twitter.bg_primary
+                                p.text-white.mt-2 Twitter
+                            .butto_type_youtube.mt-2.text-white.d-flex.justify-content-between
+                                i.fab.fa-youtube.bg_primary
+                                p.text-white.mt-2 Youtube
+    include _footer
+include _js

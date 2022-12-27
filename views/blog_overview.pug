@@ -1,0 +1,116 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='img/favicon.ico' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='assets/animation/animate.css')
+    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    title YCY
+.body_wrapper
+    include _header
+    section.breadcrumb_area
+        img.p_absolute.bl_left(src='img/v.svg' alt='')
+        img.p_absolute.bl_right(src='img/home_one/b_leaf.svg' alt='')
+        img.p_absolute.star(src='img/home_one/banner_bg.png' alt='')
+        img.p_absolute.wave_shap_one(src='img/blog-classic/shap_01.png' alt='')
+        img.p_absolute.wave_shap_two(src='img/blog-classic/shap_02.png' alt='')
+        img.p_absolute.one.wow.fadeInRight(src='img/home_one/b_man_two.png' alt='')
+        img.p_absolute.two.wow.fadeInUp(data-wow-delay='0.2s' src='img/home_one/flower.png' alt='')
+        .container 
+    section.page_breadcrumb
+        .container
+            .row
+                .col-sm-7
+                    nav(aria-label='breadcrumb')
+                        ol.breadcrumb
+                            li.breadcrumb-item
+                                a(href='index.html') Home
+                            li.breadcrumb-item
+                                a(href='blog-single.html') Blog
+                            li.breadcrumb-item
+                                a(href='blog-grid.html') Blog Grid
+                            li.breadcrumb-item.active(aria-current='page') blog catagorie
+    section.doc_blog_grid_area
+        .container
+            .row.blog_grid_tab
+                .col-lg-4.col-sm-6
+                    .blog_grid_post.wow.fadeInUp
+                        img(src='https://media.istockphoto.com/photos/teenager-girl-doing-her-homework-stock-photo-picture-id1214280041?k=20&m=1214280041&s=612x612&w=0&h=IUC1n6voqi0zWdEL2hvbpUcfRpvZakCFp8HxEqcIiDM=' alt='')
+                        .grid_post_content
+                            .post_tag
+                                a(href='#') 28-9-2022
+                                a.c_blue(href='#') WordPress
+                            a(href='blog-single.html')
+                                h4.b_title Is Your Store Safe From Magento Killer?
+                            p The pressure to keep our skills sharp is constant. Mastering new skills may...
+                            .media.post_author
+                                .round_img
+                                    img(src='img/blog-grid/author_1.jpg' alt='')
+                                .media-body.author_text
+                                    h4 Jason Response
+                                    .date Sep 14, 2020
+                .col-lg-4.col-sm-6
+                    .blog_grid_post.wow.fadeInUp(data-wow-delay='0.2s')
+                        img(src='https://media.istockphoto.com/photos/teenager-girl-doing-her-homework-stock-photo-picture-id1213693689?k=20&m=1213693689&s=612x612&w=0&h=36CG5lOTB8N-lIJr-d8o7dFcp697qe5aZNkiOpiu92Y=' alt='')
+                        .grid_post_content
+                            .post_tag
+                                a(href='#') 18 Min Read
+                                a.cat-KbDoc.orange(href='#') KbDoc
+                            a(href='blog-single.html')
+                                h4.b_title 70 Best Startups You Need to Watch Out for
+                            p The pressure to keep our skills sharp is constant. Mastering new skills may...
+                            .media.post_author
+                                .round_img
+                                    img(src='img/blog-grid/author_2.jpg' alt='')
+                                .media-body.author_text
+                                    h4 Druid Wensleydale
+                                    .date Sep 14, 2020
+                .col-lg-4.col-sm-6
+                    .blog_grid_post.wow.fadeInUp(data-wow-delay='0.4s')
+                        img(src='https://media.istockphoto.com/photos/teenager-girl-doing-her-homework-stock-photo-picture-id1214280041?k=20&m=1214280041&s=612x612&w=0&h=IUC1n6voqi0zWdEL2hvbpUcfRpvZakCFp8HxEqcIiDM=' alt='')
+                        .grid_post_content
+                            .post_tag
+                                a(href='#') 10 Min Read
+                                a.cat-laravel.green(href='#') Laravel
+                            a(href='blog-single.html')
+                                h4.b_title Create Conditional Logic Forms &amp; Publish
+                            p The pressure to keep our skills sharp is constant. Mastering new skills may...
+                            .media.post_author
+                                .round_img
+                                    img(src='img/blog-grid/author_3.jpg' alt='')
+                                .media-body.author_text
+                                    h4 Douglas Lyphe
+                                    .date Nov 10, 2020
+    section.doc_action_area_three
+        img.p_absolute.shadows(src='img/blog-grid/shadow_action.png' alt='')
+        img.p_absolute.b_man(src='img/blog-grid/man.png' alt='')
+        .container
+            .row
+                .col-lg-5
+                    .action_content
+                        h2
+                            | Want to read more about your favourite 
+                            span topic?
+                        p Get regular updates in your inbox
+                .col-lg-7
+                    form.footer_subscribe_form.action_subscribe_form(action='#')
+                        .form-group
+                            input.form-control(type='email' placeholder='Email Address')
+                            button.s_btn(type='submit')
+                                | Subcribe Now 
+                                i.arrow_right
+                        .form-check
+                            input#defaultCheck1.form-check-input(type='checkbox' value='')
+                            label.form-check-label(for='defaultCheck1')
+                                | I agree to the KbDoc
+    include _footer
+// Back to top button
+a#back-to-top(title='Back to Top')
+include _js

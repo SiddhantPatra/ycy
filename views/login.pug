@@ -1,0 +1,55 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='img/ycylogo.png' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='/assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='/assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='/assets/animation/animate.css')
+    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet' href='/css/responsive.css')
+    title ycy
+body(data-alert=`${alert ? alert : ''}`)
+.body_wrapper
+    include _header
+    section.breadcrumb_area
+        img.p_absolute.bl_right(src='img/home_one/b_leaf.svg' alt='')
+        img.p_absolute.star(src='img/home_one/banner_bg.png' alt='')
+        img.p_absolute.wave_shap_one(src='img/blog-classic/shap_01.png' alt='')
+        img.p_absolute.wave_shap_two(src='img/blog-classic/shap_02.png' alt='')
+        img.p_absolute.one.wow.fadeInRight(src='img/home_one/b_man_two.png' alt='')
+        .container.custom_container
+    section.signup_area_2
+        .container
+            .mini_container
+                .screen
+                    .screen__content
+                        form.form.form--login.login
+                            h3.text-center Log In
+                            hr
+                            .login__field
+                                i.login__icon.fas.fa-user
+                                input#email.login__input(type='email' placeholder='you@example.com', required)
+                            .login__field
+                                i.login__icon.fas.fa-lock
+                                input#password.login__input(type='password' placeholder='••••••••', required, minlength='8')
+                            a(href='#')
+                                p.text-center(style='font-size: 13px;') FORGOT PASSWORD?
+                            button.button.login__submit.btn
+                                span.button__text.text-dark.text-center Log In
+                                i.button__icon.fas.fa-chevron-right 
+                            .social-login
+                                .social-icons
+                                    a.social-login__icon.fab.fa-instagram(href='#')
+                                    a.social-login__icon.fab.fa-facebook(href='#')
+                                    a.social-login__icon.fab.fa-twitter(href='#')
+                    .screen__background
+                        span.screen__background__shape.screen__background__shape4
+                        span.screen__background__shape.screen__background__shape3
+                        span.screen__background__shape.screen__background__shape2
+                        span.screen__background__shape.screen__background__shape1
+    include _footer
+include _js

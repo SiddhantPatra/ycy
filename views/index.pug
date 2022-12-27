@@ -1,0 +1,281 @@
+doctype html
+head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='shortcut icon' href='img/ycylogo.png' type='image/x-icon')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+    // icon css
+    link(rel='stylesheet' href='assets/elagent-icon/style.css')
+    link(rel='stylesheet' href='assets/animation/animate.css')
+    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='css/responsive.css')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    title YCY
+.body_wrapper
+    include _header
+    section.doc_banner_area_two
+        .b_plus.one(data-parallax='{"x": -10, "y": 80, "rotateY":0}')
+            img(src='img/home_two/plus.png' alt='')
+        .b_plus.two(data-parallax='{"x": -10, "y": 80, "rotateY":0}')
+            img(src='img/home_two/plus_one.png' alt='')
+        .b_round.r_one(data-parallax='{"x": 0, "y": 100, "rotateZ":0}')
+        .b_round.r_two(data-parallax='{"x": -10, "y": 80, "rotateY":0}')
+            img(src='img/home_two/plus.png' alt='')
+        .container
+            .row
+                .col-md-6
+                    .doc_banner_text_two.wow.fadeInLeft
+                        h6 Best way to learn from anywhere
+                        h2
+                            | Clear your Doubts 
+                            br
+                            | With 
+                            span.typed-text
+                            span.cursor &nbsp;
+                            br
+                            | Classes.
+                        form.banner_search_form.search-question-index
+                            input#question.form-control(type="text" placeholder='Search the Knowledge Base')
+                            input#subject.form-control(type="hidden" )
+                            //- button.search_btn(name='submit')
+                            button.search_btn(name='submit')
+                                i.fas.fa-search
+                        .banner_button
+                            a(href='/all-questions')
+                                button View All Questions
+                .col-md-6
+                    .side-img.mt-2.wow.fadeInRight
+                        img.img-fluid(src='img/Frame.png')
+    section.doc_solution_area.pt-5.mt-5.pb-5
+        .container
+            .row.mt-3
+                .col-lg-6.col-md-6
+                    .left_side_vidio.wow.fadeInLeft
+                        .small_section
+                        .small_section2
+                        img(src='img/dotimg.png')
+                        .vidio
+                            iframe(width='400' height='230' src='https://www.youtube.com/embed/Nn5eYUgLxt0' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+                .col-lg-6.col-md-6
+                    .about_content.wow.fadeInRight.mt-5
+                        h6 About Us
+                        h2 Welcome To YCY CLASS
+                        p
+                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            | quis nostrud exercitation ullamco laboris
+                        p  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        p  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        .banner_button
+                            a(href='/contact-us')
+                                button BooK Now
+    section.doc_solution_area.pt-5.pb-5
+        .container
+            .mini_row
+                .row
+                    .col-md-6.col-lg-6.mt-5
+                        .d-block.ml-auto
+                            h2 One to One Doubt Class 
+                            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            .banner_button.ml-0
+                                a(href='/contact-us')
+                                    button BooK Now
+                    .col-md-6.col-lg-6
+                        img.img-fluid(src='img/Group 2205.png')
+    .container-fluid.mt-4.pt-2.pb-5
+        .slider
+            .user-card
+                img(src='img/Group 2196.png' alt='User image')
+                .user-info
+                    div
+                        h3 John Doe
+                        p Science Teacher
+                    button.btn Follow
+                .d-flex.justify-content-between
+                    i.fa.fa-graduation-cap.mt-1(aria-hidden='true')
+                    p 19 Course
+                    i.fa.fa-user-graduate.mt-1
+                    p 25,599 Students
+                    i.fa.fa-star.mt-1
+                    p 4.8
+            .user-card
+                img(src='img/Mask group.png' alt='User image')
+                .user-info
+                    div
+                        h3 John Doe
+                        p Chemistry Teacher
+                    button.btn Follow
+            .user-card
+                img(src='img/Group 2196.png' alt='User image')
+                .user-info
+                    div
+                        h3 John Doe
+                        p Chemistry Teacher
+                    button.btn Follow
+            .user-card
+                img(src='img/Mask group.png' alt='User image')
+                .user-info
+                    div
+                        h3 John Doe
+                        p Chemistry Teacher
+                    button.btn Follow
+            .user-card
+                img(src='img/Group 2196.png' alt='User image')
+                .user-info
+                    div
+                        h3 John Doe
+                        p Chemistry Teacher
+                    button.btn Follow
+            .user-card
+                img(src='img/Mask group.png' alt='User image')
+                .user-info
+                    div
+                        h3 John Doe
+                        p Chemistry Teacher
+                    button.btn Follow
+    section.doc_solution_area.pt-5.pb-5
+        .container
+            .row
+                .col-md-4
+                    .Classes
+                        img.img-responsive(src='img/Group 2183.png')
+                        .classes_content
+                            h4.text-center Book a doubt class
+                            p.text-justify
+                                | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                | Pretium sapien, ipsum eu et habitant arcu dignissim egestas
+                                | ipsum.
+                .col-md-4
+                    .Classes
+                        img.img-responsive(src='img/Group 2184.png')
+                        .classes_content
+                            h4.text-center Assign with teacher
+                            p.text-justify
+                                | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                | Pretium sapien, ipsum eu et habitant arcu dignissim egestas
+                                | ipsum.
+                .col-md-4
+                    .Classes
+                        img.img-responsive(src='img/Group 2185.png')
+                        .classes_content
+                            h4.text-center Clear your doubts
+                            p.text-justify
+                                | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                | Pretium sapien, ipsum eu et habitant arcu dignissim egestas
+                                | ipsum.
+    section.doc_solution_area.pt-5.pb-5
+        .container
+            .row
+                .col-md-6
+                    #wrapper
+                        #style-default.scrollbar
+                            .force-overflow
+                        #style-1.scrollbar
+                            .force-overflow
+                            .review_content.bg-white
+                                .review
+                                    .row
+                                        .col-md-8
+                                            h5.text-white Sidharth smoky
+                                            p.text-white 6th Class Student
+                                        .col-md-4
+                                            img(src='img/Ellipse 1.png')
+                                p
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    | tempor incididunt ut labore et dolore magna aliqua.
+                            .review_content.bg-white.mt-4
+                                #review_bg.review
+                                    .row
+                                        .col-md-8
+                                            h5.text-white Sidharth smoky
+                                            p.text-white 6th Class Student
+                                        .col-md-4
+                                            img(src='img/Ellipse 2.png')
+                                p
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    | tempor incididunt ut labore et dolore magna aliqua.
+                            .review_content.bg-white.mt-4
+                                .review
+                                    .row
+                                        .col-md-8
+                                            h5.text-white Sidharth smoky
+                                            p.text-white 6th Class Student
+                                        .col-md-4
+                                            img(src='img/Ellipse 1.png')
+                                p
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    | tempor incididunt ut labore et dolore magna aliqua.
+                            .review_content.bg-white.mt-4
+                                #review_bg.review
+                                    .row
+                                        .col-md-8
+                                            h5.text-white Sidharth smoky
+                                            p.text-white 6th Class Student
+                                        .col-md-4
+                                            img(src='img/Ellipse 2.png')
+                                p
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    | tempor incididunt ut labore et dolore magna aliqua.
+                            .review_content.bg-white.mt-4
+                                .review
+                                    .row
+                                        .col-md-8
+                                            h5.text-white Sidharth smoky
+                                            p.text-white 6th Class Student
+                                        .col-md-4
+                                            img(src='img/Ellipse 1.png')
+                                p
+                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    | tempor incididunt ut labore et dolore magna aliqua.
+                .col-md-6
+                    .mt-4
+                        h2 Whats Our Student Say
+                        p
+                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            | tempor incididunt ut labore et dolore magna aliqua.
+                        p
+                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            | tempor incididunt ut labore et dolore magna aliqua.
+                        p
+                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            | tempor incididunt ut labore et dolore magna aliqua.
+                        .banner_button.ml-0
+                            a(href='/contact-us')
+                                button BooK Now
+    section.doc_fun_fact_area
+        .animated-waves
+            svg.animated-wave(width='100%' height='100%' version='1.1' xmlns='http://www.w3.org/2000/svg')
+                title Wave
+                defs
+                path#animated-wave-three(d='')
+            svg.animated-wave(width='100%' height='100%' version='1.1' xmlns='http://www.w3.org/2000/svg')
+                title Wave
+                defs
+                path#animated-wave-four(d='')
+        .container
+            .row
+                .col-lg-3.col-md-3.col-sm-6.wow.fadeInUp
+                    .doc_fact_item
+                        .counter 5486
+                        p Happy Student
+                .col-lg-3.col-md-3.col-sm-6.wow.fadeInUp(data-wow-delay='0.2s')
+                    .doc_fact_item
+                        .counter 642
+                        p Cups of Coffee
+                .col-lg-3.col-md-3.col-sm-6.wow.fadeInUp(data-wow-delay='0.4s')
+                    .doc_fact_item
+                        .counter 100
+                        p Finished Projects
+                .col-lg-3.col-md-3.col-sm-6.wow.fadeInUp(data-wow-delay='0.6s')
+                    .doc_fact_item
+                        .counter 476
+                        p Staff Members
+    include _footer
+    // Back to top button
+    a#back-to-top(title='Back to Top')
+include _js
